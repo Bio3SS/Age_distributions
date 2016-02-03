@@ -17,6 +17,10 @@ include stuff.mk
 
 ## Content
 
+Sources += $(wildcard *.R)
+
+const.Rout arch_sad.Rout arch.Rout: survival.Rout
+
 ######################################################################
 
 ### Makestuff
@@ -27,5 +31,5 @@ include stuff.mk
 -include $(ms)/git.mk
 -include $(ms)/visual.mk
 
-# -include $(ms)/wrapR.mk
+-include $(ms)/wrapR.mk
 # -include $(ms)/oldlatex.mk
