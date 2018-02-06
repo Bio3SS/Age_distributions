@@ -1,10 +1,9 @@
 # Age_distributions
 ### Hooks for the editor to set the default target
 current: target
--include $(ms)/target.mk
+-include target.mk
 
 ##################################################################
-
 
 # make files
 
