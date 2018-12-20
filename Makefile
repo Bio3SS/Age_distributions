@@ -11,6 +11,8 @@ Sources = Makefile .ignore README.md sub.mk LICENSE.md
 include sub.mk
 # include $(ms)/perl.def
 
+Sources += $(ms)
+
 ##################################################################
 
 ## Content
