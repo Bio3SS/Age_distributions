@@ -1,19 +1,20 @@
 # Age_distributions
-### Hooks for the editor to set the default target
+## Also not much here ☹
+
+
 current: target
 -include target.mk
 
-##################################################################
+# -include makestuff/perl.def
 
-# make files
+######################################################################
 
-Sources = Makefile .ignore README.md sub.mk LICENSE.md
-include sub.mk
-# include $(ms)/perl.def
+# Content
 
-Sources += $(ms)
+vim_session:
+	bash -cl "vmt"
 
-##################################################################
+######################################################################
 
 ## Content
 
@@ -25,11 +26,19 @@ const.Rout arch_sad.Rout arch.Rout: survival.Rout
 
 ### Makestuff
 
-## Change this name to download a new version of the makestuff directory
-# Makefile: start.makestuff
+Sources += Makefile
 
--include $(ms)/git.mk
--include $(ms)/visual.mk
+Ignore += makestuff
+msrepo = https://github.com/dushoff
+Makefile: makestuff/Makefile
+makestuff/Makefile:
+	git clone $(msrepo)/makestuff
+	ls $@
 
--include $(ms)/wrapR.mk
-# -include $(ms)/oldlatex.mk
+-include makestuff/os.mk
+
+-include makestuff/wrapR.mk
+
+-include makestuff/git.mk
+-include makestuff/visual.mk
+-include makestuff/projdir.mk
